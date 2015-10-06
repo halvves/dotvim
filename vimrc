@@ -4,6 +4,13 @@ set nocompatible
 set title
 set laststatus=2
 set history=1000
-colorscheme xoria256
-syntax on
+syntax enable
+set background=dark
+colorscheme solarized
+
+
 set number
+
+source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
+set laststatus=2
+
