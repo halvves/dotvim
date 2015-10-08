@@ -36,3 +36,4 @@ set laststatus=2
 " let g:airlinesymbols.whitespace = ‘?’
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
+set showcmd
