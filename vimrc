@@ -11,10 +11,18 @@ set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
 set number
-set laststatus=2
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 set showcmd
+
+" Toggle Lexplore with Ctrl-E
+map <silent> <C-E> :Lexplore<CR>
+let g:netrw_banner=0         " No Banner 
+let g:netrw_winsize = 30     " Set Explorer Size - Default 50
+let g:netrw_browse_split = 4 " Hit enter in explorer to open selected
+let g:netrw_altv = 1         " Open files to the right
+let g:netrw_liststyle=3      " Tree View (set 0 for thin)
+set autochdir                " Change directory to the current buffer when opening files
 
 """""""""""""""""""""""""""""""""
 " give us nice EOL (end of line) characters
