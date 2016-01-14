@@ -22,3 +22,6 @@
 [submodule "bundle/airline-onedark.vim"]
 	path = bundle/airline-onedark.vim
 	url = https://github.com/joshdick/airline-onedark.vim.git
+[submodule "bundle/vim-surround"]
+	path = bundle/vim-surround
+	url = https://github.com/tpope/vim-surround.git

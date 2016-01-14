@@ -11,13 +11,13 @@ set shiftwidth=2    " Indents will have a width of 4
 set softtabstop=0   " Sets the number of columns for a TAB
 set expandtab       " Always use space instead of tab chars
 set list listchars=tab:▸\ ,eol:¬ " Nice EOL and TAB chars
+set cursorline
 syntax enable
 set background=dark
 " set term=xterm-256color
 " set term=screen-256color
 colorscheme onedark
 let g:airline_theme='onedark'
-
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 
