@@ -11,11 +11,12 @@ set shiftwidth=2    " Indents will have a width of 4
 set softtabstop=0   " Sets the number of columns for a TAB
 set expandtab       " Always use space instead of tab chars
 set list listchars=tab:▸\ ,eol:¬ " Nice EOL and TAB chars
-
 syntax enable
 " set term=xterm-256color
 " set term=screen-256color
-colorscheme hybrid
+colorscheme onedark
+let g:airline_theme='onedark'
+
 " let base16colorspace=256  " Access colors present in 256 colorspace
 set background=dark
 
