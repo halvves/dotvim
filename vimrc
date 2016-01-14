@@ -1,16 +1,25 @@
 execute pathogen#infect()
 filetype plugin indent on
-set nocompatible
+set nocompatible    " Duh
 set title
+set number          " Show line numbers
 set laststatus=2
-set history=1000
+set history=1000    " More history
+set tabstop=2       " The width of a TAB is set to 4.
+set shiftwidth=2    " Indents will have a width of 4
+set softtabstop=0   " Sets the number of columns for a TAB
+set expandtab       " Always use space instead of tab chars
+set list listchars=tab:▸\ ,eol:¬ " Nice EOL and TAB chars
+
 syntax enable
 " set term=xterm-256color
-set term=screen-256color
+" set term=screen-256color
+" colorscheme base16-default
+let base16colorspace=256  " Access colors present in 256 colorspace
 set background=dark
-let g:solarized_termcolors=256
+" let g:solarized_termcolors=256
+" colorscheme xoria256
 colorscheme solarized
-set number
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 set showcmd
@@ -24,11 +33,6 @@ let g:netrw_altv = 1         " Open files to the right
 let g:netrw_liststyle=3      " Tree View (set 0 for thin)
 set autochdir                " Change directory to the current buffer when opening files
 
-"""""""""""""""""""""""""""""""""
-" give us nice EOL (end of line) characters
-"""""""""""""""""""""""""""""""""
-" set list
-" set listchars=tab:▸\ ,eol:¬
 
 """""""""""""""""""
 " Powerline Plugin
