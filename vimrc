@@ -12,19 +12,19 @@ set softtabstop=0   " Sets the number of columns for a TAB
 set expandtab       " Always use space instead of tab chars
 set list listchars=tab:▸\ ,eol:¬ " Nice EOL and TAB chars
 syntax enable
+set background=dark
 " set term=xterm-256color
 " set term=screen-256color
-colorscheme onedark
-let g:airline_theme='onedark'
+" colorscheme onedark
+" let g:airline_theme='onedark'
+colorscheme hybrid
 
-" let base16colorspace=256  " Access colors present in 256 colorspace
-set background=dark
 
-" let g:solarized_termcolors=256
-" colorscheme xoria256
-" colorscheme solarized
+
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
+
+
 
 " Toggle Lexplore with Ctrl-E
 " map <silent> <C-E> :Lexplore<CR>
@@ -34,7 +34,6 @@ autocmd FileType html,css EmmetInstall
 " let g:netrw_altv = 1         " Open files to the right
 " let g:netrw_liststyle=3      " Tree View (set 0 for thin)
 " set autochdir                " Change directory to the current buffer when opening files
-
 
 """""""""""""""""""
 " Powerline Plugin
