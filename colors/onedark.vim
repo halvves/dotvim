@@ -140,7 +140,7 @@ call s:h("Conceal", {}) " placeholder characters substituted for concealed text 
 call s:h("Cursor", { "fg": s:black, "bg": s:blue }) " the character under the cursor
 call s:h("CursorIM", {}) " like Cursor, but used when in IME mode
 call s:h("CursorColumn", { "bg": s:cursor_grey }) " the screen column that the cursor is in when 'cursorcolumn' is set
-call s:h("CursorLine", { "bg": s:cursor_grey }) " the screen line that the cursor is in when 'cursorline' is set
+call s:h("CursorLine", { "bg": s:black }) " the screen line that the cursor is in when 'cursorline' is set
 call s:h("Directory", {}) " directory names (and other special names in listings)
 call s:h("DiffAdd", { "fg": s:green }) " diff mode: Added line
 call s:h("DiffChange", { "fg": s:dark_yellow }) " diff mode: Changed line

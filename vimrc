@@ -1,28 +1,53 @@
 execute pathogen#infect()
 filetype plugin indent on
-set nocompatible    " Duh
-set title
+set nocompatible    " Vi improvvvvved
+set encoding=utf-8
+syntax enable
+
+" General
+set backspace=2     " Enable <BS> for everything
+set title           " Filename in window title
 set number          " Show line numbers
-set showcmd
+set showcmd         " Show command on last line of screen
+set showmatch       " Show matching brackets
 set laststatus=2
 set history=1000    " More history
-set backspace=2
 set wildmenu
-set tabstop=2       " The width of a TAB is set to 4.
-set shiftwidth=2    " Indents will have a width of 4
-set softtabstop=0   " Sets the number of columns for a TAB
-set expandtab       " Always use space instead of tab chars
-set list listchars=tab:▸\ ,eol:¬ " Nice EOL and TAB chars
 set cursorline
-syntax enable
+set noshowmode      " Don't show mode in status (already in Airline)
+set list listchars=tab:▸\ ,eol:¬ " Nice EOL and TAB chars
+
+" Colors
 set background=dark
-" set term=xterm-256color
-" set term=screen-256color
+" set t_Co=256
 colorscheme onedark
 let g:airline_theme='onedark'
+" set term=xterm-256color
+set term=screen-256color
+
+" Tabs
+set autoindent
+set expandtab       " Always use space instead of tab chars
+set shiftwidth=2    " Indents will have a width of 2
+set tabstop=2       " The width of a TAB is set to 2.
+set softtabstop=2   " Sets the number of columns for a TAB
+set smarttab
+
+" Searches
+set hlsearch        " Highlight search results
+set incsearch       " Search while typing
+set ignorecase      " Case insensitive searching
+set smartcase       " Override ignorecase if upper case is typed
+
+" Emmet
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 
+" indentLine
+let g:indentLine_color_term = 238
+let g:indentLine_color_gui = '#636D83'
+let g:indentLine_color_tty_light = 15 " (default: 4)
+let g:indentLine_color_dark = 15 " (default: 2)
 
 " Toggle Lexplore with Ctrl-E
 " map <silent> <C-E> :Lexplore<CR>
@@ -33,27 +58,12 @@ autocmd FileType html,css EmmetInstall
 " let g:netrw_liststyle=3      " Tree View (set 0 for thin)
 " set autochdir                " Change directory to the current buffer when opening files
 
-"""""""""""""""""""
-" Powerline Plugin
-"""""""""""""""""""
-" python from powerline.vim import setup as powerline_setup
-" python powerline_setup()
-" python del powerline_setup
-
-""""""""""""""""""""
-" Try To Config Airline
-""""""""""""""""""""
-" if !exists(‘g:airlinesymbols’)
-" let g:airlinesymbols = {}
-" endif let g:airlineleftsep = ‘»’
-" let g:airlineleftsep = ‘?’
-" let g:airlinerightsep = ‘«’
-" let g:airlinerightsep = ‘?’
-" let g:airlinesymbols.linenr = ‘?’
-" let g:airlinesymbols.linenr = ‘?’
-" let g:airlinesymbols.linenr = ‘¶’
-" let g:airlinesymbols.branch = ‘? ‘
-" let g:airlinesymbols.paste = ‘?’
-" let g:airlinesymbols.paste = ‘Þ’
-" let g:airlinesymbols.paste = ‘?’
-" let g:airlinesymbols.whitespace = ‘?’
+" Airline
+let g:airline_symbols = {}
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline_symbols.linenr = '¶' " others: ␊ ␤
+let g:airline_symbols.branch = '| ⎇ '
+let g:airline_symbols.paste = 'ρ' " others:Þ ∥
+let g:airline_symbols.crypt = ''
+let g:airline_symbols.whitespace = 'Ξ'
