@@ -15,15 +15,11 @@ syntax enable
 set background=dark
 " set term=xterm-256color
 " set term=screen-256color
-" colorscheme onedark
-" let g:airline_theme='onedark'
-colorscheme hybrid
-
-
+colorscheme onedark
+let g:airline_theme='onedark'
 
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
-
 
 
 " Toggle Lexplore with Ctrl-E
