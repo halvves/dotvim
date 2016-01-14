@@ -3,6 +3,7 @@ filetype plugin indent on
 set nocompatible    " Duh
 set title
 set number          " Show line numbers
+set showcmd
 set laststatus=2
 set history=1000    " More history
 set tabstop=2       " The width of a TAB is set to 4.
@@ -14,16 +15,15 @@ set list listchars=tab:▸\ ,eol:¬ " Nice EOL and TAB chars
 syntax enable
 " set term=xterm-256color
 " set term=screen-256color
-" colorscheme base16-default
+colorscheme hybrid
 " let base16colorspace=256  " Access colors present in 256 colorspace
-
 set background=dark
+
 " let g:solarized_termcolors=256
-colorscheme xoria256
+" colorscheme xoria256
 " colorscheme solarized
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
-set showcmd
 
 " Toggle Lexplore with Ctrl-E
 " map <silent> <C-E> :Lexplore<CR>
