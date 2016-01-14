@@ -15,11 +15,12 @@ syntax enable
 " set term=xterm-256color
 " set term=screen-256color
 " colorscheme base16-default
-let base16colorspace=256  " Access colors present in 256 colorspace
+" let base16colorspace=256  " Access colors present in 256 colorspace
+
 set background=dark
 " let g:solarized_termcolors=256
-" colorscheme xoria256
-colorscheme solarized
+colorscheme xoria256
+" colorscheme solarized
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 set showcmd
