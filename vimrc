@@ -6,6 +6,8 @@ set number          " Show line numbers
 set showcmd
 set laststatus=2
 set history=1000    " More history
+set backspace=2
+set wildmenu
 set tabstop=2       " The width of a TAB is set to 4.
 set shiftwidth=2    " Indents will have a width of 4
 set softtabstop=0   " Sets the number of columns for a TAB
