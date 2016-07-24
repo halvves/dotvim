@@ -49,6 +49,10 @@ let g:indentLine_color_gui = '#636D83'
 let g:indentLine_color_tty_light = 15 " (default: 4)
 let g:indentLine_color_dark = 15 " (default: 2)
 
+" vim-json (this config fixes a problem with indentLine
+"           that never lets you see quotes in json)
+let g:vim_json_syntax_conceal = 0  " unconceal quotes
+
 " Toggle Lexplore with Ctrl-E
 " map <silent> <C-E> :Lexplore<CR>
 " let g:netrw_banner=0         " No Banner 
