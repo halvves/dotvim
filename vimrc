@@ -75,3 +75,9 @@ let g:airline_symbols.branch = '| ⎇ '
 let g:airline_symbols.paste = 'ρ' " others:Þ ∥
 let g:airline_symbols.crypt = ''
 let g:airline_symbols.whitespace = 'Ξ'
+
+" Syntax
+" JavaScript
+let g:javascript_plugin_jsdoc = 1 " enable highlighting jsdoc
+let g:javascript_plugin_flow = 1  " enable highlighting flow
+let g:jsx_ext_required = 0        " highlight jsx in files other than *.jsx
