@@ -62,6 +62,10 @@ let g:vim_json_syntax_conceal = 0  " unconceal quotes
 " let g:netrw_liststyle=3      " Tree View (set 0 for thin)
 " set autochdir                " Change directory to the current buffer when opening files
 
+" Syntastic
+let g:syntastic_javascript_checkers = ['eslint']            " Enable eslint
+let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint' " Use project specific eslint
+
 " Airline
 let g:airline_symbols = {}
 let g:airline_left_sep = ''
