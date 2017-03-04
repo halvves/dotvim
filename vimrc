@@ -17,6 +17,9 @@ set cursorline
 set noshowmode      " Don't show mode in status (already in Airline)
 set list listchars=tab:▸\ ,eol:¬ " Nice EOL and TAB chars
 
+" Ignore these files
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+
 " Colors
 set background=dark
 " set t_Co=256
