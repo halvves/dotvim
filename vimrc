@@ -77,3 +77,8 @@ let g:airline_symbols.branch = '| ⎇ '
 let g:airline_symbols.paste = 'ρ' " others:Þ ∥
 let g:airline_symbols.crypt = ''
 let g:airline_symbols.whitespace = 'Ξ'
+
+" Airline Tabline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
