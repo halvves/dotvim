@@ -63,6 +63,14 @@ let g:vim_json_syntax_conceal = 0  " unconceal quotes
 " set autochdir                " Change directory to the current buffer when opening files
 
 " Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+
 let g:syntastic_javascript_checkers = ['eslint']            " Enable eslint
 let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint' " Use project specific eslint
 
