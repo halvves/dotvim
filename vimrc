@@ -17,6 +17,9 @@ set cursorline
 set noshowmode      " Don't show mode in status (already in Airline)
 set list listchars=tab:▸\ ,eol:¬ " Nice EOL and TAB chars
 
+" Ignore these files
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+
 " Colors
 set background=dark
 " set t_Co=256
@@ -38,6 +41,9 @@ set hlsearch        " Highlight search results
 set incsearch       " Search while typing
 set ignorecase      " Case insensitive searching
 set smartcase       " Override ignorecase if upper case is typed
+
+" Ctrl-P ignore files in .gitignore
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " Emmet
 let g:user_emmet_install_global = 0
@@ -83,6 +89,11 @@ let g:airline_symbols.branch = '| ⎇ '
 let g:airline_symbols.paste = 'ρ' " others:Þ ∥
 let g:airline_symbols.crypt = ''
 let g:airline_symbols.whitespace = 'Ξ'
+
+" Airline Tabline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 
 " Syntax
 " JavaScript
