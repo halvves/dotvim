@@ -55,30 +55,28 @@ let g:indentLine_color_gui = '#636D83'
 let g:indentLine_color_tty_light = 15 " (default: 4)
 let g:indentLine_color_dark = 15 " (default: 2)
 
+" Ale (Linting)
+let g:ale_echo_msg_error_str = 'ERR'
+let g:ale_echo_msg_warning_str = 'WARN'
+let g:ale_echo_msg_format = '[%severity%][%linter%] %s'
+let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+function ALE() abort
+    return exists('*ALEGetStatusLine') ? ALEGetStatusLine() : ''
+endfunction
+let g:airline_section_error = '%{ALE()}'
+
 " vim-json (this config fixes a problem with indentLine
 "           that never lets you see quotes in json)
 let g:vim_json_syntax_conceal = 0  " unconceal quotes
 
 " Toggle Lexplore with Ctrl-E
 " map <silent> <C-E> :Lexplore<CR>
-" let g:netrw_banner=0         " No Banner 
+" let g:netrw_banner=0         " No Banner
 " let g:netrw_winsize = 25     " Set Explorer Size - Default 50
 " let g:netrw_browse_split = 4 " Hit enter in explorer to open selected
 " let g:netrw_altv = 1         " Open files to the right
 " let g:netrw_liststyle=3      " Tree View (set 0 for thin)
 " set autochdir                " Change directory to the current buffer when opening files
-
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-
-let g:syntastic_javascript_checkers = ['eslint']            " Enable eslint
-let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint' " Use project specific eslint
 
 " Airline
 let g:airline_symbols = {}

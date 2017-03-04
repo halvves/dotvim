@@ -28,9 +28,6 @@
 [submodule "bundle/onedark.vim"]
 	path = bundle/onedark.vim
 	url = https://github.com/joshdick/onedark.vim.git
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
-	url = https://github.com/scrooloose/syntastic
 [submodule "bundle/vim-javascript"]
 	path = bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
@@ -40,3 +37,6 @@
 [submodule "bundle/vim-node"]
 	path = bundle/vim-node
 	url = https://github.com/moll/vim-node.git
+[submodule "bundle/ale"]
+	path = bundle/ale
+	url = https://github.com/w0rp/ale.git
