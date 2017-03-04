@@ -42,6 +42,9 @@ set incsearch       " Search while typing
 set ignorecase      " Case insensitive searching
 set smartcase       " Override ignorecase if upper case is typed
 
+" Ctrl-P ignore files in .gitignore
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
 " Emmet
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
