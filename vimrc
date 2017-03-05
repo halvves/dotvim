@@ -49,6 +49,10 @@ inoremap <ESC> <C-c>
 "-----------------------------
 " PLUGIN CONFIGS
 "-----------------------------
+" EditorConfig
+" play well with Fugitive. avoid loading EditorConfig for remote ssh
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+
 " Ctrl-P
 " ignore files in .gitignore
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
