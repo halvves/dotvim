@@ -49,3 +49,9 @@
 [submodule "bundle/delimitmate"]
 	path = bundle/delimitmate
 	url = https://github.com/raimondi/delimitmate
+[submodule "bundle/vim-one"]
+	path = bundle/vim-one
+	url = https://github.com/rakr/vim-one.git
+[submodule "bundle/gruvbox"]
+	path = bundle/gruvbox
+	url = https://github.com/morhetz/gruvbox.git

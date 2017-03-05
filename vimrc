@@ -40,12 +40,12 @@ set scrolloff=4
 set sidescrolloff=8
 
 " Colors
-set background=dark
-" set t_Co=256
-colorscheme onedark
-let g:airline_theme='onedark'
 " set term=xterm-256color
 set term=screen-256color
+" set t_Co=256
+colorscheme gruvbox
+let g:airline_theme='gruvbox'
+set background=dark
 
 " Make ESC exit Insert/Visual instantly
 vnoremap <ESC> <C-c>
