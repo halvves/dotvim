@@ -8,7 +8,8 @@ syntax enable
 set backspace=2     " Enable <BS> for everything
 set title           " Filename in window title
 set number          " Show line numbers
-set showcmd         " Show command on last line of screen
+" set showcmd       " Show command on last line of screen
+set noshowcmd       " Don't show command on last line of scrren
 set showmatch       " Show matching brackets
 set laststatus=2
 set history=1000    " More history
@@ -33,6 +34,10 @@ set smartcase       " Override ignorecase if upper case is typed
 
 " Ignore these files
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+
+" Show context around current cursor position
+set scrolloff=4
+set sidescrolloff=8
 
 " Colors
 set background=dark
