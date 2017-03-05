@@ -17,17 +17,6 @@ set cursorline
 set noshowmode      " Don't show mode in status (already in Airline)
 set list listchars=tab:▸\ ,eol:¬ " Nice EOL and TAB chars
 
-" Ignore these files
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-
-" Colors
-set background=dark
-" set t_Co=256
-colorscheme onedark
-let g:airline_theme='onedark'
-" set term=xterm-256color
-set term=screen-256color
-
 " Tabs
 set autoindent
 set expandtab       " Always use space instead of tab chars
@@ -42,7 +31,26 @@ set incsearch       " Search while typing
 set ignorecase      " Case insensitive searching
 set smartcase       " Override ignorecase if upper case is typed
 
-" Ctrl-P ignore files in .gitignore
+" Ignore these files
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+
+" Colors
+set background=dark
+" set t_Co=256
+colorscheme onedark
+let g:airline_theme='onedark'
+" set term=xterm-256color
+set term=screen-256color
+
+" Make ESC exit Insert/Visual instantly
+vnoremap <ESC> <C-c>
+inoremap <ESC> <C-c>
+
+"-----------------------------
+" PLUGIN CONFIGS
+"-----------------------------
+" Ctrl-P
+" ignore files in .gitignore
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " Emmet
@@ -68,19 +76,6 @@ function ALE() abort
 endfunction
 let g:airline_section_error = '%{ALE()}'
 
-" vim-json (this config fixes a problem with indentLine
-"           that never lets you see quotes in json)
-let g:vim_json_syntax_conceal = 0  " unconceal quotes
-
-" Toggle Lexplore with Ctrl-E
-" map <silent> <C-E> :Lexplore<CR>
-" let g:netrw_banner=0         " No Banner
-" let g:netrw_winsize = 25     " Set Explorer Size - Default 50
-" let g:netrw_browse_split = 4 " Hit enter in explorer to open selected
-" let g:netrw_altv = 1         " Open files to the right
-" let g:netrw_liststyle=3      " Tree View (set 0 for thin)
-" set autochdir                " Change directory to the current buffer when opening files
-
 " Airline
 let g:airline_symbols = {}
 let g:airline_left_sep = ''
@@ -96,8 +91,14 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 
-" Syntax
+"-----------------------------
+" SYNTAX
+"-----------------------------
 " JavaScript
 let g:javascript_plugin_jsdoc = 1 " enable highlighting jsdoc
 let g:javascript_plugin_flow = 1  " enable highlighting flow
 let g:jsx_ext_required = 0        " highlight jsx in files other than *.jsx
+
+" JSON (this config fixes a problem with indentLine
+"           that never lets you see quotes in json)
+let g:vim_json_syntax_conceal = 0  " unconceal quotes
