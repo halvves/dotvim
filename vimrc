@@ -56,10 +56,13 @@ let g:indentLine_color_tty_light = 15 " (default: 4)
 let g:indentLine_color_dark = 15 " (default: 2)
 
 " Ale (Linting)
-let g:ale_echo_msg_error_str = 'ERR'
-let g:ale_echo_msg_warning_str = 'WARN'
+let g:ale_sign_error = '●'              " Custom Error Sign
+let g:ale_sign_warning = '●'            " Custom Warning Sign
+let g:ale_sign_column_always = 1        " Keep Sign Gutter Open
+let g:ale_echo_msg_error_str = 'ERR'    " Error text/symbol
+let g:ale_echo_msg_warning_str = 'WARN' " Warning text/symbol
 let g:ale_echo_msg_format = '[%severity%][%linter%] %s'
-let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+let g:ale_statusline_format = ['X %d', '! %d', 'OK']
 function ALE() abort
     return exists('*ALEGetStatusLine') ? ALEGetStatusLine() : ''
 endfunction
@@ -83,7 +86,7 @@ let g:airline_symbols = {}
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_symbols.linenr = '¶' " others: ␊ ␤
-let g:airline_symbols.branch = '| ⎇ '
+let g:airline_symbols.branch = '' " others:| ⎇
 let g:airline_symbols.paste = 'ρ' " others:Þ ∥
 let g:airline_symbols.crypt = ''
 let g:airline_symbols.whitespace = 'Ξ'
