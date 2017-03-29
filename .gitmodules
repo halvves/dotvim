@@ -58,3 +58,9 @@
 [submodule "bundle/vim-unimpaired"]
 	path = bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
+[submodule "bundle/seoul256.vim"]
+	path = bundle/seoul256.vim
+	url = https://github.com/junegunn/seoul256.vim.git
+[submodule "bundle/vim-lucius"]
+	path = bundle/vim-lucius
+	url = https://github.com/jonathanfilip/vim-lucius.git
