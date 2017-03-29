@@ -41,7 +41,7 @@ set sidescrolloff=8
 
 " Colors
 " set term=xterm-256color
-set term=screen-256color
+" set term=screen-256color
 " set t_Co=256
 colorscheme gruvbox
 let g:airline_theme='gruvbox'
