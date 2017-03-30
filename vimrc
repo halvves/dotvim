@@ -113,7 +113,7 @@ set statusline+=%= " Switch to the right side
 set statusline+=%y
 set statusline+=\ \ %{(&fenc!=''?&fenc:&enc)}\[%{&ff}]
 " set statusline+=\ \ %3p%%\ ¶
-set statusline+=\ \ %3l\/%3L\ :\ %-3c\ \|
+set statusline+=\ \ %3l\/%-3L\ :\ %-3c\ \|
 set statusline+=\ %{StatuslineAle()}
 
 "-----------------------------
@@ -131,11 +131,12 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 
-" indentLine
-let g:indentLine_color_term = 238
-let g:indentLine_color_gui = '#636D83'
-let g:indentLine_color_tty_light = 15 " (default: 4)
-let g:indentLine_color_dark = 15 " (default: 2)
+" indentLine (these colors looked better on a diff theme
+" but seoul256 handles indent line nicely)
+" let g:indentLine_color_term = 238
+" let g:indentLine_color_gui = '#636D83'
+" let g:indentLine_color_tty_light = 15 " (default: 4)
+" let g:indentLine_color_dark = 15 " (default: 2)
 
 " Gitgutter
 let g:gitgutter_sign_removed = '-'
