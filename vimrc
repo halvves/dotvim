@@ -90,7 +90,7 @@ function! StatuslineGit()
   let symbols = [
     \ g:gitgutter_sign_added,
     \ g:gitgutter_sign_modified,
-    \ g:gitgutter_sign_removed
+    \ '-'
     \ ]
   let hunks = GitGutterGetHunkSummary()
   let ret = []
@@ -137,9 +137,6 @@ autocmd FileType html,css EmmetInstall
 " let g:indentLine_color_gui = '#636D83'
 " let g:indentLine_color_tty_light = 15 " (default: 4)
 " let g:indentLine_color_dark = 15 " (default: 2)
-
-" Gitgutter
-let g:gitgutter_sign_removed = '-'
 
 " Ale (Linting)
 let g:ale_sign_error = '●'              " Custom Error Sign
