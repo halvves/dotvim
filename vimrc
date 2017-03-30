@@ -11,7 +11,6 @@ set number          " Show line numbers
 " set showcmd       " Show command on last line of screen
 set noshowcmd       " Don't show command on last line of scrren
 set showmatch       " Show matching brackets
-set laststatus=2
 set history=1000    " More history
 set wildmenu
 set cursorline
@@ -39,17 +38,83 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 set scrolloff=4
 set sidescrolloff=8
 
-" Colors
+" Color
 " set term=xterm-256color
 " set term=screen-256color
 " set t_Co=256
-colorscheme gruvbox
-let g:airline_theme='gruvbox'
+colorscheme seoul256
 set background=dark
 
 " Make ESC exit Insert/Visual instantly
 vnoremap <ESC> <C-c>
 inoremap <ESC> <C-c>
+
+" Statusline
+let g:currentmode={
+    \ 'n'  : 'Normal ',
+    \ 'no' : 'N Operator Pending ',
+    \ 'v'  : 'Visual ',
+    \ 'V'  : 'V Line ',
+    \ '^V' : 'V Block ',
+    \ 's'  : 'Select ',
+    \ 'S'  : 'S Line ',
+    \ '^S' : 'S Block ',
+    \ 'i'  : 'Insert ',
+    \ 'R'  : 'R ',
+    \ 'Rv' : 'V Replace ',
+    \ 'c'  : 'Command ',
+    \ 'cv' : 'Vim Ex ',
+    \ 'ce' : 'Ex ',
+    \ 'r'  : 'Prompt ',
+    \ 'rm' : 'More ',
+    \ 'r?' : 'Confirm ',
+    \ '!'  : 'Shell ',
+    \ 't'  : 'Terminal '
+    \}
+
+function! StatuslineReadOnly()
+  if &readonly || !&modifiable
+    return 'RO'
+  else
+    return ''
+endfunction
+
+function! StatuslineGit()
+  if ! exists('*GitGutterGetHunkSummary')
+    \ || ! exists('*fugitive#head')
+    \ || fugitive#head() == ''
+    \ || !get(g:, 'gitgutter_enabled', 0)
+    \ || winwidth('.') <= 90
+    return ''
+  endif
+  let symbols = [
+    \ g:gitgutter_sign_added,
+    \ g:gitgutter_sign_modified,
+    \ g:gitgutter_sign_removed
+    \ ]
+  let hunks = GitGutterGetHunkSummary()
+  let ret = []
+  for i in [0, 1, 2]
+    call add(ret, symbols[i] . hunks[i])
+  endfor
+  return join(ret, ' ') . ' ' . fugitive#head() . ' |'
+endfunction
+
+function! StatuslineAle()
+  return exists('*ALEGetStatusLine') ? ALEGetStatusLine() . '  ' : ''
+endfunction
+
+set laststatus=2
+set statusline=
+set statusline+=\ %{toupper(g:currentmode[mode()])}\ \|
+set statusline+=\ %{StatuslineGit()}
+set statusline+=\ %<%F%m\ %{StatuslineReadOnly()}\ %w
+set statusline+=%= " Switch to the right side
+set statusline+=%y
+set statusline+=\ \ %{(&fenc!=''?&fenc:&enc)}\[%{&ff}]
+" set statusline+=\ \ %3p%%\ ¶
+set statusline+=\ \ %3l\/%3L\ :\ %-3c\ \|
+set statusline+=\ %{StatuslineAle()}
 
 "-----------------------------
 " PLUGIN CONFIGS
@@ -72,6 +137,9 @@ let g:indentLine_color_gui = '#636D83'
 let g:indentLine_color_tty_light = 15 " (default: 4)
 let g:indentLine_color_dark = 15 " (default: 2)
 
+" Gitgutter
+let g:gitgutter_sign_removed = '-'
+
 " Ale (Linting)
 let g:ale_sign_error = '●'              " Custom Error Sign
 let g:ale_sign_warning = '●'            " Custom Warning Sign
@@ -80,25 +148,6 @@ let g:ale_echo_msg_error_str = 'ERR'    " Error text/symbol
 let g:ale_echo_msg_warning_str = 'WARN' " Warning text/symbol
 let g:ale_echo_msg_format = '[%severity%][%linter%] %s'
 let g:ale_statusline_format = ['X %d', '! %d', 'OK']
-function ALE() abort
-    return exists('*ALEGetStatusLine') ? ALEGetStatusLine() : ''
-endfunction
-let g:airline_section_error = '%{ALE()}'
-
-" Airline
-let g:airline_symbols = {}
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-let g:airline_symbols.linenr = '¶' " others: ␊ ␤
-let g:airline_symbols.branch = '' " others:| ⎇
-let g:airline_symbols.paste = 'ρ' " others:Þ ∥
-let g:airline_symbols.crypt = ''
-let g:airline_symbols.whitespace = 'Ξ'
-
-" Airline Tabline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
 
 "-----------------------------
 " SYNTAX
