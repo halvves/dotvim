@@ -139,8 +139,8 @@ autocmd FileType html,css EmmetInstall
 " let g:indentLine_color_dark = 15 " (default: 2)
 
 " Ale (Linting)
-let g:ale_sign_error = '●'              " Custom Error Sign
-let g:ale_sign_warning = '●'            " Custom Warning Sign
+" let g:ale_sign_error = '>'              " Custom Error Sign
+" let g:ale_sign_warning = '-'            " Custom Warning Sign
 let g:ale_sign_column_always = 1        " Keep Sign Gutter Open
 let g:ale_echo_msg_error_str = 'ERR'    " Error text/symbol
 let g:ale_echo_msg_warning_str = 'WARN' " Warning text/symbol
