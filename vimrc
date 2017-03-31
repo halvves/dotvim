@@ -147,6 +147,10 @@ let g:ale_echo_msg_warning_str = 'WARN' " Warning text/symbol
 let g:ale_echo_msg_format = '[%severity%][%linter%] %s'
 let g:ale_statusline_format = ['X %d', '! %d', 'OK']
 
+" Delimitmate
+let delimitMate_expand_cr = 1
+" let delimitMate_expand_space = 1
+
 "-----------------------------
 " SYNTAX
 "-----------------------------
