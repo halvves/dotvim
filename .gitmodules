@@ -67,3 +67,6 @@
 [submodule "bundle/tmux.vim"]
 	path = bundle/tmux.vim
 	url = https://github.com/keith/tmux.vim.git
+[submodule "bundle/javascript-libraries-syntax.vim"]
+	path = bundle/javascript-libraries-syntax.vim
+	url = https://github.com/othree/javascript-libraries-syntax.vim.git

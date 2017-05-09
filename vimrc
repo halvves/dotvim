@@ -159,6 +159,9 @@ let g:javascript_plugin_jsdoc = 1 " enable highlighting jsdoc
 let g:javascript_plugin_flow = 1  " enable highlighting flow
 let g:jsx_ext_required = 0        " highlight jsx in files other than *.jsx
 
+" JavaScript Libraries
+let g:used_javascript_libs = 'jquery,underscore,react,vue,d3,angularjs'
+
 " JSON (this config fixes a problem with indentLine
 "           that never lets you see quotes in json)
 let g:vim_json_syntax_conceal = 0  " unconceal quotes
