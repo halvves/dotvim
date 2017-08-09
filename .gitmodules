@@ -73,3 +73,6 @@
 [submodule "bundle/dash.vim"]
 	path = bundle/dash.vim
 	url = https://github.com/rizzatti/dash.vim.git
+[submodule "bundle/vim-styled-components"]
+	path = bundle/vim-styled-components
+	url = git@github.com:fleischie/vim-styled-components.git
