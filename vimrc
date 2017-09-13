@@ -165,3 +165,10 @@ let g:used_javascript_libs = 'jquery,underscore,react,vue,d3,angularjs'
 " JSON (this config fixes a problem with indentLine
 "           that never lets you see quotes in json)
 let g:vim_json_syntax_conceal = 0  " unconceal quotes
+
+" XML - fix vim's weird closing tags
+hi Tag        ctermfg=04
+hi xmlTag     ctermfg=04
+hi xmlTagName ctermfg=04
+hi xmlEndTag  ctermfg=04
+
