@@ -82,3 +82,6 @@
 [submodule "bundle/visual-split.vim"]
 	path = bundle/visual-split.vim
 	url = git@github.com:wellle/visual-split.vim.git
+[submodule "bundle/nord-vim"]
+	path = bundle/nord-vim
+	url = git@github.com:arcticicestudio/nord-vim.git
