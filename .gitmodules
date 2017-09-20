@@ -79,3 +79,6 @@
 [submodule "bundle/vim-eunuch"]
 	path = bundle/vim-eunuch
 	url = git://github.com/tpope/vim-eunuch.git
+[submodule "bundle/visual-split.vim"]
+	path = bundle/visual-split.vim
+	url = git@github.com:wellle/visual-split.vim.git
