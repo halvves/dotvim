@@ -139,13 +139,17 @@ autocmd FileType html,css EmmetInstall
 " let g:indentLine_color_dark = 15 " (default: 2)
 
 " Ale (Linting)
-let g:ale_sign_error = '●'              " Custom Error Sign
-let g:ale_sign_warning = '●'            " Custom Warning Sign
+" let g:ale_sign_error = '>'              " Custom Error Sign
+" let g:ale_sign_warning = '-'            " Custom Warning Sign
 let g:ale_sign_column_always = 1        " Keep Sign Gutter Open
 let g:ale_echo_msg_error_str = 'ERR'    " Error text/symbol
 let g:ale_echo_msg_warning_str = 'WARN' " Warning text/symbol
 let g:ale_echo_msg_format = '[%severity%][%linter%] %s'
 let g:ale_statusline_format = ['X %d', '! %d', 'OK']
+
+" Delimitmate
+let delimitMate_expand_cr = 1
+" let delimitMate_expand_space = 1
 
 "-----------------------------
 " SYNTAX
@@ -155,6 +159,16 @@ let g:javascript_plugin_jsdoc = 1 " enable highlighting jsdoc
 let g:javascript_plugin_flow = 1  " enable highlighting flow
 let g:jsx_ext_required = 0        " highlight jsx in files other than *.jsx
 
+" JavaScript Libraries
+let g:used_javascript_libs = 'jquery,underscore,react,vue,d3,angularjs'
+
 " JSON (this config fixes a problem with indentLine
 "           that never lets you see quotes in json)
 let g:vim_json_syntax_conceal = 0  " unconceal quotes
+
+" XML - fix vim's weird closing tags
+hi Tag        ctermfg=04
+hi xmlTag     ctermfg=04
+hi xmlTagName ctermfg=04
+hi xmlEndTag  ctermfg=04
+
