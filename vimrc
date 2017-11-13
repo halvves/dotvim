@@ -4,6 +4,8 @@ set nocompatible    " Vi improvvvvved
 set encoding=utf-8
 syntax enable
 
+set hidden
+
 " General
 set backspace=2     " Enable <BS> for everything
 set title           " Filename in window title
@@ -172,3 +174,8 @@ hi xmlTag     ctermfg=04
 hi xmlTagName ctermfg=04
 hi xmlEndTag  ctermfg=04
 
+" Rust
+let g:racer_cmd = "$HOME/.cargo/bin/racer"
+let g:racer_experimental_completer = 1
+" put this line below in .bashrc or .zshrc
+" export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"

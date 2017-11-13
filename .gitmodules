@@ -91,3 +91,6 @@
 [submodule "bundle/nord-vim"]
 	path = bundle/nord-vim
 	url = git@github.com:arcticicestudio/nord-vim.git
+[submodule "bundle/vim-racer"]
+	path = bundle/vim-racer
+	url = https://github.com/racer-rust/vim-racer.git
