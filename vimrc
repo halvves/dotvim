@@ -144,11 +144,15 @@ autocmd FileType html,css EmmetInstall
 " Ale (Linting)
 " let g:ale_sign_error = '>'              " Custom Error Sign
 " let g:ale_sign_warning = '-'            " Custom Warning Sign
-let g:ale_sign_column_always = 1        " Keep Sign Gutter Open
-let g:ale_echo_msg_error_str = 'ERR'    " Error text/symbol
-let g:ale_echo_msg_warning_str = 'WARN' " Warning text/symbol
+let g:ale_sign_column_always = 1
+let g:ale_echo_msg_error_str = 'ERR'
+let g:ale_echo_msg_warning_str = 'WARN'
 let g:ale_echo_msg_format = '[%severity%][%linter%] %s'
 let g:ale_statusline_format = ['X %d', '! %d', 'OK']
+let g:ale_fixers = {}
+let g:ale_fixers['javascript'] = ['prettier']
+let g:ale_fix_on_save = 1
+let g:ale_javascript_prettier_use_local_config = 1
 
 " Delimitmate
 let delimitMate_expand_cr = 1
