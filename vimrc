@@ -5,6 +5,7 @@ set encoding=utf-8
 syntax enable
 
 set hidden
+let g:markdown_syntax_conceal = 0
 
 " General
 set backspace=2     " Enable <BS> for everything
