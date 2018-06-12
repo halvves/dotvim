@@ -52,7 +52,11 @@ set background=dark
 vnoremap <ESC> <C-c>
 inoremap <ESC> <C-c>
 
-" Statusline
+
+"*******************************
+" STATUSLINE
+"*******************************
+
 let g:currentmode={
     \ 'n'  : 'Normal ',
     \ 'no' : 'N Operator Pending ',
@@ -119,31 +123,35 @@ set statusline+=\ \ %{(&fenc!=''?&fenc:&enc)}\[%{&ff}]
 set statusline+=\ \ %3l\/%-3L\ :\ %-3c\ \|
 set statusline+=\ %{StatuslineAle()}
 
-"-----------------------------
-" PLUGIN CONFIGS
-"-----------------------------
+
+"*******************************
+" GENERAL PLUGINS
+"*******************************
+
+" --------------
 " EditorConfig
+" ------
 " play well with Fugitive. avoid loading EditorConfig for remote ssh
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
+
+" --------------
 " Ctrl-P
+" ------
 " ignore files in .gitignore
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
+
+" --------------
 " Emmet
+" ------
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 
-" indentLine (these colors looked better on a diff theme
-" but seoul256 handles indent line nicely)
-" let g:indentLine_color_term = 238
-" let g:indentLine_color_gui = '#636D83'
-" let g:indentLine_color_tty_light = 15 " (default: 4)
-" let g:indentLine_color_dark = 15 " (default: 2)
 
-" Ale (Linting)
-" let g:ale_sign_error = '>'              " Custom Error Sign
-" let g:ale_sign_warning = '-'            " Custom Warning Sign
+" --------------
+" Ale
+" ------
 let g:ale_sign_column_always = 1
 let g:ale_echo_msg_error_str = 'ERR'
 let g:ale_echo_msg_warning_str = 'WARN'
@@ -154,32 +162,52 @@ let g:ale_fixers['javascript'] = ['prettier']
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
 
+
+" --------------
 " Delimitmate
+" ------
 let delimitMate_expand_cr = 1
 " let delimitMate_expand_space = 1
 
-"-----------------------------
-" SYNTAX
-"-----------------------------
-" JavaScript
+
+"*******************************
+" SYNTAX/LANGUAGE PLUGINS
+"*******************************
+
+" --------------
+" js
+" ------
 let g:javascript_plugin_jsdoc = 1 " enable highlighting jsdoc
 let g:javascript_plugin_flow = 1  " enable highlighting flow
 let g:jsx_ext_required = 0        " highlight jsx in files other than *.jsx
 
-" JavaScript Libraries
+
+" --------------
+" js libraries
+" ------
 let g:used_javascript_libs = 'jquery,underscore,react,vue,d3,angularjs'
 
-" JSON (this config fixes a problem with indentLine
-"           that never lets you see quotes in json)
-let g:vim_json_syntax_conceal = 0  " unconceal quotes
 
-" XML - fix vim's weird closing tags
+" --------------
+" json
+" ------
+" fixes a problem with indentLine that never lets you see quotes in json
+let g:vim_json_syntax_conceal = 0
+
+
+" --------------
+" xml
+" ------
+" fix vim's weird closing tags
 hi Tag        ctermfg=04
 hi xmlTag     ctermfg=04
 hi xmlTagName ctermfg=04
 hi xmlEndTag  ctermfg=04
 
-" Rust
+
+" --------------
+"  rust
+"  -----
 let g:racer_cmd = "$HOME/.cargo/bin/racer"
 let g:racer_experimental_completer = 1
 " put this line below in .bashrc or .zshrc
