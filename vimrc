@@ -107,8 +107,17 @@ function! StatuslineGit()
   return join(ret, ' ') . ' ' . fugitive#head() . ' |'
 endfunction
 
-function! StatuslineAle()
-  return exists('*ALEGetStatusLine') ? ALEGetStatusLine() . '  ' : ''
+function! StatuslineLinter() abort
+    let l:counts = ale#statusline#Count(bufnr(''))
+
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+
+    return l:counts.total == 0 ? 'OK ' : printf(
+    \   '! %d X %d ',
+    \   all_non_errors,
+    \   all_errors
+    \)
 endfunction
 
 set laststatus=2
@@ -121,7 +130,7 @@ set statusline+=%y
 set statusline+=\ \ %{(&fenc!=''?&fenc:&enc)}\[%{&ff}]
 " set statusline+=\ \ %3p%%\ ¶
 set statusline+=\ \ %3l\/%-3L\ :\ %-3c\ \|
-set statusline+=\ %{StatuslineAle()}
+set statusline+=\ %{StatuslineLinter()}
 
 
 "*******************************
@@ -156,7 +165,6 @@ let g:ale_sign_column_always = 1
 let g:ale_echo_msg_error_str = 'ERR'
 let g:ale_echo_msg_warning_str = 'WARN'
 let g:ale_echo_msg_format = '[%severity%][%linter%] %s'
-let g:ale_statusline_format = ['X %d', '! %d', 'OK']
 let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier']
 let g:ale_fix_on_save = 1
