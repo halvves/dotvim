@@ -1,6 +1,10 @@
-execute pathogen#infect()
+if &compatible
+  set nocompatible
+endif
+
+source ~/.vim/packages.vim
+
 filetype plugin indent on
-set nocompatible    " Vi improvvvvved
 set encoding=utf-8
 syntax enable
 
@@ -45,7 +49,7 @@ set sidescrolloff=8
 " set term=xterm-256color
 " set term=screen-256color
 " set t_Co=256
-colorscheme seoul256
+:silent! colorscheme seoul256
 set background=dark
 
 " Make ESC exit Insert/Visual instantly
@@ -108,6 +112,7 @@ function! StatuslineGit()
 endfunction
 
 function! StatuslineLinter() abort
+  if exists('*ale#statusline#Count')
     let l:counts = ale#statusline#Count(bufnr(''))
 
     let l:all_errors = l:counts.error + l:counts.style_error
@@ -118,6 +123,7 @@ function! StatuslineLinter() abort
     \   all_non_errors,
     \   all_errors
     \)
+  endif
 endfunction
 
 set laststatus=2

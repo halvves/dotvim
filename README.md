@@ -1,28 +1,22 @@
 # Vim Configuration File
 
-## Setup New Config from this Repo
+## Starting fresh with this repo 
 
-### Install
+### Clone
 ```Shell
 git clone https://github.com/halvves/dotvim.git ~/.vim
 ```
 
-### Fetch submodules for pathogen
-```Shell
-cd ~/.vim/ && git submodule init && git submodule update
-```
+### Install plugins using minpac
+open vim and run `:PackUpdate`
 
-## To Install Additional Bundles
-```
-$ cd ~/.vim/bundle
-$ git submodule add https://github.com/user/repo.git
-```
+## Adding/Removing/Updating
 
-## To Update Bundles
-```Shell
-$ cd ~/.vim/bundle/[MY_BUNDLE]
-$ git pull origin master
-```
+### Adding plugins
+add a `call minpac#add('https://path.to/plugin.git')` entry to `packages.vim` and re-run `:PackUpdate`
 
-Sources:
-* http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
+### Removing plugins
+delete the plugin's `call minpac#add('https://path.to/plugin.git')` entry and run `:PackClean`
+
+### Updating plugins
+simply run `:PackUpdate`
