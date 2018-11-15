@@ -112,7 +112,8 @@ function! StatuslineGit()
 endfunction
 
 function! StatuslineLinter() abort
-  if exists('*ale#statusline#Count')
+  " if exists('*ale#statusline#Count')
+  " for some reason this check on longer passes ever
     let l:counts = ale#statusline#Count(bufnr(''))
 
     let l:all_errors = l:counts.error + l:counts.style_error
@@ -123,7 +124,7 @@ function! StatuslineLinter() abort
     \   all_non_errors,
     \   all_errors
     \)
-  endif
+  " endif
 endfunction
 
 set laststatus=2
