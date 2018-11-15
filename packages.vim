@@ -22,7 +22,8 @@ call minpac#add('https://github.com/wellle/visual-split.vim.git')
 
 " git
 call minpac#add('https://github.com/tpope/vim-fugitive.git')
-call minpac#add('https://github.com/airblade/vim-gitgutter.git')
+call minpac#add('https://github.com/junegunn/gv.vim')
+call minpac#add('https://github.com/mhinz/vim-signify')
 
 " fuzzy
 call minpac#add('https://github.com/ctrlpvim/ctrlp.vim.git')

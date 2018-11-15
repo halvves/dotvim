@@ -91,24 +91,23 @@ function! StatuslineReadOnly()
 endfunction
 
 function! StatuslineGit()
-  if ! exists('*GitGutterGetHunkSummary')
+  if ! exists('*sy#repo#get_stats()')
     \ || ! exists('*fugitive#head')
     \ || fugitive#head() == ''
-    \ || !get(g:, 'gitgutter_enabled', 0)
     \ || winwidth('.') <= 90
     return ''
   endif
-  let symbols = [
-    \ g:gitgutter_sign_added,
-    \ g:gitgutter_sign_modified,
-    \ '-'
-    \ ]
-  let hunks = GitGutterGetHunkSummary()
-  let ret = []
-  for i in [0, 1, 2]
-    call add(ret, symbols[i] . hunks[i])
+
+  let symbols = ['+', '~', '-']
+  let stats = sy#repo#get_stats()
+  let hunkline = ''
+
+  for i in range(3)
+    let gitchanged = stats[i] > 0 ? stats[i] : 0
+    let hunkline .= printf('%s%s ', symbols[i], gitchanged)
   endfor
-  return join(ret, ' ') . ' ' . fugitive#head() . ' |'
+
+  return hunkline . fugitive#head() . ' |'
 endfunction
 
 function! StatuslineLinter() abort
@@ -149,6 +148,12 @@ set statusline+=\ %{StatuslineLinter()}
 " ------
 " play well with Fugitive. avoid loading EditorConfig for remote ssh
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+
+" --------------
+" Signify
+" ------
+let g:signify_vcs_list = ['git']
+let g:signify_sign_show_count = 1
 
 
 " --------------
