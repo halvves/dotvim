@@ -25,6 +25,10 @@ call minpac#add('https://github.com/tpope/vim-fugitive.git')
 call minpac#add('https://github.com/junegunn/gv.vim')
 call minpac#add('https://github.com/mhinz/vim-signify')
 
+" language server protocol
+call minpac#add('https://github.com/autozimu/LanguageClient-neovim', 
+  \ {'branch': 'next', 'do': {-> system('bash install.sh')}})
+
 " fuzzy
 call minpac#add('https://github.com/ctrlpvim/ctrlp.vim.git')
 
@@ -51,6 +55,9 @@ call minpac#add('https://github.com/othree/javascript-libraries-syntax.vim.git')
 " html
 call minpac#add('https://github.com/othree/html5.vim.git')
 call minpac#add('https://github.com/mattn/emmet-vim.git')
+
+" reasonml
+call minpac#add('https://github.com/reasonml-editor/vim-reason-plus.git')
 
 " colors
 call  minpac#add('https://github.com/junegunn/seoul256.vim.git')
