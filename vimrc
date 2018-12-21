@@ -187,6 +187,12 @@ let g:ale_fixers = {
   \ 'reason': ['refmt']
 \}
 
+" rust language server & rustfmt
+" rustup component add rls-preview rust-analysis rust-src rustfmt-preview
+
+" reason language server & refmt
+" npm i -g reason-cli@latest-macos
+" npm i -g ocaml-language-server
 
 " --------------
 " Delimitmate
