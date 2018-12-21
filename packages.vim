@@ -25,10 +25,6 @@ call minpac#add('https://github.com/tpope/vim-fugitive.git')
 call minpac#add('https://github.com/junegunn/gv.vim')
 call minpac#add('https://github.com/mhinz/vim-signify')
 
-" language server protocol
-call minpac#add('https://github.com/autozimu/LanguageClient-neovim', 
-  \ {'branch': 'next', 'do': {-> system('bash install.sh')}})
-
 " fuzzy
 call minpac#add('https://github.com/junegunn/fzf.git',
   \ { 'do': './install --all' })
