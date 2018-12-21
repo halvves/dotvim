@@ -30,7 +30,9 @@ call minpac#add('https://github.com/autozimu/LanguageClient-neovim',
   \ {'branch': 'next', 'do': {-> system('bash install.sh')}})
 
 " fuzzy
-call minpac#add('https://github.com/ctrlpvim/ctrlp.vim.git')
+call minpac#add('https://github.com/junegunn/fzf.git',
+  \ { 'do': './install --all' })
+call minpac#add('https://github.com/junegunn/fzf.vim.git')
 
 " linting
 call minpac#add('https://github.com/w0rp/ale.git')

@@ -157,11 +157,12 @@ let g:signify_sign_show_count = 1
 
 
 " --------------
-" Ctrl-P
+" fzf
 " ------
-" ignore files in .gitignore
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-
+" ctrl-p plz
+nnoremap <C-p> :Files<Cr>
+" ctrl-f for ripgrep
+nnoremap <C-f> :Rg<Cr>
 
 " --------------
 " Emmet
