@@ -178,8 +178,13 @@ let g:ale_sign_column_always = 1
 let g:ale_echo_msg_error_str = 'ERR'
 let g:ale_echo_msg_warning_str = 'WARN'
 let g:ale_echo_msg_format = '[%severity%][%linter%] %s'
+let g:ale_completion_enabled = 1
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
+let g:ale_rust_rls_toolchain = 'stable'
+let g:ale_linters = {
+  \ 'rust': ['rls']
+\}
 let g:ale_fixers = {
   \ '*': ['remove_trailing_lines', 'trim_whitespace'],
   \ 'rust': ['rustfmt'],
@@ -188,7 +193,12 @@ let g:ale_fixers = {
 \}
 
 " rust language server & rustfmt
-" rustup component add rls-preview rust-analysis rust-src rustfmt-preview
+" rustup component add
+" \ rls-preview
+" \ rust-analysis
+" \ rust-src
+" \ rustfmt-preview
+" \ --toolchain stable
 
 " reason language server & refmt
 " npm i -g reason-cli@latest-macos
