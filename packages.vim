@@ -36,12 +36,12 @@ call minpac#add('https://github.com/w0rp/ale.git')
 " tmux
 call minpac#add('https://github.com/keith/tmux.vim.git')
 
-" rust
-call minpac#add('https://github.com/rust-lang/rust.vim.git')
-call minpac#add('https://github.com/racer-rust/vim-racer.git')
-
 " toml
 call minpac#add('https://github.com/cespare/vim-toml.git')
+
+" html
+call minpac#add('https://github.com/othree/html5.vim.git')
+call minpac#add('https://github.com/mattn/emmet-vim.git')
 
 " js
 call minpac#add('https://github.com/pangloss/vim-javascript.git')
@@ -50,9 +50,15 @@ call minpac#add('https://github.com/moll/vim-node.git')
 call minpac#add('https://github.com/mxw/vim-jsx.git')
 call minpac#add('https://github.com/othree/javascript-libraries-syntax.vim.git')
 
-" html
-call minpac#add('https://github.com/othree/html5.vim.git')
-call minpac#add('https://github.com/mattn/emmet-vim.git')
+" other web
+call minpac#add('https://github.com/evanleck/vim-svelte.git')
+
+" glsl
+call minpac#add('https://github.com/tikhomirov/vim-glsl')
+
+" rust
+call minpac#add('https://github.com/rust-lang/rust.vim.git')
+call minpac#add('https://github.com/racer-rust/vim-racer.git')
 
 " reasonml
 call minpac#add('https://github.com/reasonml-editor/vim-reason-plus.git')
