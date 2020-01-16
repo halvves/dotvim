@@ -193,6 +193,7 @@ autocmd FileType html,css EmmetInstall
 " --------------
 " Ale
 " ------
+let g:ale_set_loclist = 0
 let g:ale_sign_column_always = 1
 let g:ale_echo_msg_error_str = 'ERR'
 let g:ale_echo_msg_warning_str = 'WARN'
