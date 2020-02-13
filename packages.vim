@@ -60,6 +60,10 @@ call minpac#add('https://github.com/tikhomirov/vim-glsl')
 call minpac#add('https://github.com/rust-lang/rust.vim.git')
 call minpac#add('https://github.com/racer-rust/vim-racer.git')
 
+" go
+call minpac#add('https://github.com/fatih/vim-go.git',
+  \ { 'do': ':GoUpdateBinaries' })
+
 " reasonml
 call minpac#add('https://github.com/reasonml-editor/vim-reason-plus.git')
 
